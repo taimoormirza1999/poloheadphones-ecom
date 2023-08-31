@@ -51,7 +51,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <h4>Details: </h4>
           <p>{details}</p>
-          <p className="price">${price}</p>
+          <p className="price">AED{price}</p>
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
@@ -68,7 +68,7 @@ const ProductDetails = ({ product, products }) => {
       </div>
 
       <div className="maylike-products-wrapper">
-          <h2>You may also like</h2>
+          <h2>You may also like these</h2>
           <div className="marquee">
             <div className="maylike-products-container track">
               {products.map((item) => (
@@ -110,7 +110,7 @@ export const getStaticProps = async ({ params: { slug }}) => {
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
 
-  console.log(product);
+  // console.log(product);
 
   return {
     props: { products, product }
